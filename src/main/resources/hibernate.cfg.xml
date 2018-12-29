@@ -9,10 +9,10 @@
 			com.mysql.jdbc.Driver
 		</property>
 		<property name="connection.url">
-			jdbc:mysql://35.200.225.150:3306/test
+			jdbc:mysql://DB_URL
 		</property>
-		<property name="connection.username">xplanck</property>
-		<property name="connection.password">xplanck</property>
+		<property name="connection.username">user</property>
+		<property name="connection.password">password</property>
 		<!-- C3p0 connection pool (use the built-in) -->
 		
 		<property name="connection.pool_size">30</property>
