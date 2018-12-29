@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://35.200.225.150:3306/test
+		</property>
+		<property name="connection.username">xplanck</property>
+		<property name="connection.password">xplanck</property>
+		<!-- C3p0 connection pool (use the built-in) -->
+		
+		<property name="connection.pool_size">30</property>
+
+		<!-- SQL dialect -->
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<property name="show_sql">false</property>
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.order_updates">true</property>
+		
+		<property name="c3p0.acquire_increment">5</property>
+		<property name="c3p0.idle_test_period">30</property>
+		<property name="c3p0.max_size">30</property>
+		<property name="c3p0.max_statements">60</property>
+		<property name="c3p0.min_size">1</property>
+		<property name="c3p0.timeout">0</property>
+		<property name="c3p0.preferredTestQuery">select 1;</property>
+		<property name="transaction.factory_class">
+			org.hibernate.transaction.JDBCTransactionFactory
+		</property>
+
+		<mapping class="com.example.model.Property" />
+		<mapping class = "com.example.model.SearchQuery" />
+
+	</session-factory>
+</hibernate-configuration>
