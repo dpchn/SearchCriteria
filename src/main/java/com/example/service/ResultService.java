@@ -20,6 +20,7 @@ public class ResultService {
 	public static JSONArray getResultList() {
 		List<SearchQuery> listOfQuery = ResultDao.getListOfQuery();
 		JSONArray listOfSearchResultWithPercentage = new JSONArray();
+		System.out.println("------Matching properties----------------");
 		for (SearchQuery query : listOfQuery) {
 			List<Property> properties = ResultDao.getValidResult(query);
 			for (Property property : properties) {
@@ -42,6 +43,14 @@ public class ResultService {
 				matchedProperty.put("no_of_bathroom", property.getBathroom());
 				matchedProperty.put("percentage", total);
 				listOfSearchResultWithPercentage.put(matchedProperty);
+				System.out.println("id : "+property.getId());
+				System.out.println("price : "+ property.getPrice());
+				System.out.println("latitude : "+ property.getLatitude());
+				System.out.println("longitude : "+ property.getLongitude());
+				System.out.println("no_of_bedroom : "+ property.getBedroom());
+				System.out.println("no_of_bathroom : "+ property.getBathroom());
+				System.out.println("matching percentage : "+ total+"%");
+				System.out.println("-----------------------");
 			}
 		}
 		return listOfSearchResultWithPercentage;
@@ -61,7 +70,10 @@ public class ResultService {
 			double bathPercentage = calculateBathroomPercentage(query, property);
 			double bedPercentage = calculateBathroomPercentage(query, property);
 			double budgetPercentage = calculateBudgetPercentage(query, property);
-			
+			System.out.println(distancePercentage);
+			System.out.println(bathPercentage);
+			System.out.println(bedPercentage);
+			System.out.println(budgetPercentage);
 			double total = distancePercentage + bathPercentage + bedPercentage + budgetPercentage;
 			JSONObject matchedProperty = new JSONObject();
 			matchedProperty.put("id", property.getId());
