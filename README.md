@@ -2,9 +2,9 @@
 
 
 
-Design Algorithm 
+# Design Algorithm 
 
-# getResultList(Query query)
+## getResultList(Query query)
 
      1. List<Property> data = ProperfetchValidData(query)
      2 . List<Map<String, Object >> result = new ArrayList()
@@ -21,7 +21,7 @@ Design Algorithm
 
 
 
-# fetchValidData(Query query)
+## fetchValidData(Query query)
 
     1. minBudget = query.budget - 25% of query.budget
     2. maxBudget = query.budget + 25% of query.budget
@@ -40,7 +40,7 @@ Design Algorithm
     11. Return validList
 
 
-# calculateDistancePercentage(Query query, Property property)
+## calculateDistancePercentage(Query query, Property property)
 
     1. longitude = property.longitude
     2. latitude = property.latitud
@@ -57,7 +57,7 @@ Design Algorithm
 
 
 
-# calculateBudgetPercentage(Query query, Property property)
+## calculateBudgetPercentage(Query query, Property property)
 
     1. If query have min and max value of budget then :
         a. If property.price within min and max of budget then :
@@ -76,7 +76,7 @@ Design Algorithm
             
            
 
-# calculateBedroomPercentage(Query query, Property property)
+## calculateBedroomPercentage(Query query, Property property)
 
     1. If query have min and max value of bedroom then :
          a. If property.bedroom within min and max of bedroom then :
@@ -96,7 +96,7 @@ Design Algorithm
 
 
 
-# calculateBathroomPercentage(Query query, Property property)
+## calculateBathroomPercentage(Query query, Property property)
 
     1. If query have min and max value of bathroom then :
         a. If property.bathroom within min and max of bathroom then :
@@ -109,7 +109,7 @@ Design Algorithm
         Return percentage
 
 
-## Refer this below link for more understanding
+### Refer this below link for more understanding
 https://drive.google.com/file/d/1--8zbfxcbQ1hMX8UO0H_XP7fhrbB79N1/view?usp=sharing
 
 
